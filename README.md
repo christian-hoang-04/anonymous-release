@@ -6,6 +6,12 @@ This repository contains the experiment code, prompt manifests, figures, tables,
 
 No author or affiliation metadata is included in this release snapshot.
 
+## Current paper
+
+**One Head Away from Language Confusion: Single Attention Heads Across Model Families**
+
+[Download the current paper (PDF)](paper.pdf)
+
 ## Paper-first reading order
 
 | Block | Question and evidence | Main code and artifacts |
