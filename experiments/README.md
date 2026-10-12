@@ -1,7 +1,4 @@
-# Detailed script and exploratory-run notes
-
-For the paper-first reading order and pinned environment, start with the repository README and REPRODUCING.md. This
-file retains the full script-level command inventory, including exploratory GPT-2 runs and robustness analyses.
+# Head ablation
 
 The original LIHA scripts ablate a head by zeroing `h*head_dim:(h+1)*head_dim` of the attention output after the
 output projection (`attn` output in GPT-2, `o_proj` output in Qwen, `self_attention` output in BLOOM). After the
