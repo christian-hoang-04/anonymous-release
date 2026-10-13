@@ -25,7 +25,7 @@ L2H5 & 0.298 & {[0.281, 0.316]} & 0.196 & 0.024 & $+$0.033 \\
 
 ## Table 1b: top five GPT-2 heads by correct→wrong, ΔNLL ≤ 0.1
 
-Suggested replacement: heads that move correct outputs to the wrong language without much LM loss change. L6H1, the paper's top head, for comparison. The last column is c→w under mean ablation (results/gpt2-mean-ablation): only L6H10 keeps most of its effect.
+The first five rows rank heads by correct→wrong switch rate among those with ΔNLL ≤ 0.1; the final row is included for comparison. The last column reports c→w under mean ablation (results/gpt2-mean-ablation); L6H10 retains most of its effect.
 
 | Head | SR | 95% CI | c→w | w→c | ΔNLL | c→w, mean abl. |
 |---|---|---|---|---|---|---|
@@ -47,7 +47,7 @@ L6H1 & 0.038 & {[0.031, 0.046]} & 0.010 & 0.013 & $+$0.002 & 0.006 \\
 
 ## Table 2: cross-model comparison
 
-σ is (max − mean) / sd over heads, as in the paper. Qwen uses the paper's 125 prompts, the others the 2,500, and OLMo is run with the end-of-text token blocked. SR > 0.1 counts aren't comparable across columns (GPT-2's mean SR is already about 0.11). The mean + 2 sd rows and the c→w rows are suggested replacements. "Switching to another language" counts c→w only when the new output is detected as some language, not empty or unknown. Some top c→w heads break generation instead of switching it: BLOOM's L23H12 makes the model stop, Pythia's L1H7 makes it emit only newlines, for English prompts too. In GPT-2 only L0H10 flips English prompts, and its outputs degenerate (ΔNLL +1.30); the next head is at 0.010. In GPT-2 medium that is 3 of 500 English prompts. In OLMo-2 1B that is 5 of 500 English prompts. In Pythia-1B that is 6 of 500 English prompts. In BLOOM-1b7 that is 1 of 500 English prompts. In Qwen-1.5B Instruct that is 1 of 25 English prompts.
+σ is (max − mean) / sd over heads, as in the paper. Qwen uses the paper's 125 prompts, the others the 2,500, and OLMo is run with the end-of-text token blocked. SR > 0.1 counts aren't comparable across columns (GPT-2's mean SR is already about 0.11). This table includes counts above the mean + 2 sd threshold and correct→wrong switch rates. "Switching to another language" counts c→w only when the new output is detected as some language, not empty or unknown. Some top c→w heads break generation instead of switching it: BLOOM's L23H12 makes the model stop, Pythia's L1H7 makes it emit only newlines, for English prompts too. In GPT-2 only L0H10 flips English prompts, and its outputs degenerate (ΔNLL +1.30); the next head is at 0.010. In GPT-2 medium that is 3 of 500 English prompts. In OLMo-2 1B that is 5 of 500 English prompts. In Pythia-1B that is 6 of 500 English prompts. In BLOOM-1b7 that is 1 of 500 English prompts. In Qwen-1.5B Instruct that is 1 of 25 English prompts.
 
 | Property | GPT-2 | GPT-2 medium | OLMo-2 1B | Pythia-1B | BLOOM-1b7 | Qwen-1.5B Base | Qwen-1.5B Instruct |
 |---|---|---|---|---|---|---|---|
